@@ -22,15 +22,6 @@ h4 {
     margin-top: 40px;
     font-weight: lighter;
 }
-
-a {
-    color: #fff;
-    text-decoration: none;
-}
-
-a:hover {
-    color: #5b6369;
-}
 .card-css {
     border: none;
     border-radius: 25px;
