@@ -1,0 +1,84 @@
+body {
+background-color: #f3f2ee;
+}
+
+h1, h2, h3, h4 {
+    margin: 0px;
+    color: #fff;
+   font-family: 'Open Sans', sans-serif;
+}
+h1 {
+font-weight:400;
+}
+h2 {
+font-size: 60px;
+font-weight: 800; 
+}
+h3 {
+    font-weight: normal;
+    margin-bottom: 30px;
+}
+h4 {
+    margin-top: 40px;
+    font-weight: lighter;
+}
+
+a {
+    color: #fff;
+    text-decoration: none;
+}
+
+a:hover {
+    color: #5b6369;
+}
+.card-css {
+    border: none;
+    border-radius: 25px;
+    background: radial-gradient(circle at 50% 5%,  rgb(255, 167, 38) 50%,  rgb(255, 255, 255) 50%, rgb(255, 255, 255) 66%);
+    text-align: center;
+    font-family: 'Open Sans', sans-serif;
+    max-width: 500px;
+    margin: 60px auto;
+    padding: 20px;
+    box-shadow: 3px 10px 12px rgba(0, 0, 0, 0.1);
+}
+
+
+.search {
+    margin: 20px auto;
+    border-color: #5b6369;
+    border-radius: 25px;
+    font-size: 20px;
+}
+.search-icon {
+    font-size: 20px;
+    border-color: #5b6369;
+}
+.forecast-week {
+margin: 40px 10px 20px 20px;
+text-align: left;
+line-height: 2.5;
+background-color: #fff;
+color: #5b6369;
+font-size: 18px;
+}
+.emojis {
+    color: #5b6369;
+    font-size: 20px;
+}
+.temperature {
+    text-align: right;
+}
+.minimum {
+    color: darkgray;
+}
+.form-control-css {
+    border: 1px solid #5b6369;
+}
+#celsius, #fahrenheit {
+    font-size: 20px;
+position: relative;
+    top: -30px;
+
+}
+
