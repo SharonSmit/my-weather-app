@@ -38,10 +38,13 @@ currentLocation.addEventListener("click", getCurrentLocation);
 
 function showWeather(response) {
   document.querySelector("h1").innerHTML = response.data.name;
-  document.querySelector("h2").innerHTML = Math.round(response.data.main.temp) + "°c";
+  document.querySelector("#temperature").innerHTML = Math.round(response.data.main.temp) + "°c";
   document.querySelector("h3").innerHTML = response.data.weather[0].description;
-  document.querySelector("#weatherIcon").innerHTML = response.data.weather[0].icon;
-}
+  document.querySelector("#weatherIcon").setAttribute(   
+    "src",
+    `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`);
+document.querySelector("#weatherIcon").setAttribute("alt", response.data.weather[0].description);
+  }
 
 function searchCity(event) {
   event.preventDefault();
@@ -55,3 +58,4 @@ function searchCity(event) {
 let updateCity = document.querySelector("form");
 updateCity.addEventListener("submit", searchCity);
 
+//Last updated & default weather: lesson 7

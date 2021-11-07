@@ -17,17 +17,28 @@
     <div class="card card-css" style="width: 25rem;">
     <form>
         <div class="input-group">
-           <div class="form-outline">
+           <div class="form-outline row">
 <div class="col-9">
   <input type="search" class="form-control rounded" id="searchField" placeholder="Search for city..." autofocus="on">
   </div>
+  <div class="col-1">
   <button class="btn btn-success" id="submitIcon" type="submit"><i class="fas fa-search"></i></button>
+ </div>
+  <div class="col-1">
   <button class="btn btn-outline-success" id="currentLocation" type="submit"><i class="fas fa-map-marker-alt emojis"></i></button>
+  </div>
 </div>
 </form>
      <h4></h4>
    <h1></h1>
-   <h2>    <i class="fas fa-sun" id="weatherIcon"></i><span id="temperature">°C</span></h2>
+   <h2>    
+      <img 
+      src="https://ssl.gstatic.com/onebox/weather/64/sunny.png"
+      alt="sunny"
+      id="weatherIcon"
+      />
+      
+      <span id="temperature">°C</span></h2>
    <h3></h3>
    </div>
    <div class="forecast-week">
