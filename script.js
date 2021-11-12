@@ -46,16 +46,36 @@ function showWeather(response) {
 document.querySelector("#weatherIcon").setAttribute("alt", response.data.weather[0].description);
   }
 
-function searchCity(event) {
-  event.preventDefault();
+function searchCity(city) {
   let apiKey = "9cb72bec958f8fb02391985ed7b219d2";
-  let city = document.querySelector("#searchField").value;
   let units = "metric";
   let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=${units}`;
   axios.get(apiUrl).then(showWeather);
 }
 
+function handleSubmit (event) {
+  event.preventDefault();
+  let city = document.querySelector("#searchField").value;
+  searchCity(city);
+}
+
 let updateCity = document.querySelector("form");
 updateCity.addEventListener("submit", searchCity);
 
-//Last updated & default weather: lesson 7
+let searchForm = document.querySelector("form");
+searchForm.addEventListener("submit", handleSubmit);
+
+searchCity("Amsterdam");
+
+function changeBackground(color) {
+  let changeTemperature = Math.round(response.data.main.temp);
+  if (changeTemperature <=15) {
+  document.getElementById("cardStyle").style.background = 'radial-gradient(circle at 50% 5%,  rgb(197, 255, 38) 50%,  rgb(255, 255, 255) 50%, rgb(255, 255, 255) 66%)';
+  }
+else {
+  document.getElementById("cardStyle").style.background = 'radial-gradient(circle at 50% 5%,  rgb(300, 200, 38) 50%,  rgb(255, 255, 255) 50%, rgb(255, 255, 255) 66%)';
+}
+}
+searchForm.addEventListener("submit", changeBackground);
+
+                       

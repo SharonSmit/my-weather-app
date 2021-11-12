@@ -14,18 +14,18 @@
 </head>
 <body>
  <div class="container">
-    <div class="card card-css" style="width: 25rem;">
+    <div class="card card-css" id = cardStyle style="width: 25rem;">
     <form>
         <div class="input-group">
            <div class="form-outline row">
 <div class="col-9">
-  <input type="search" class="form-control rounded" id="searchField" placeholder="Search for city..." autofocus="on">
+  <input type="search" class="form-control rounded" id="searchField" placeholder="Search for city...">
   </div>
   <div class="col-1">
-  <button class="btn btn-success" id="submitIcon" type="submit"><i class="fas fa-search"></i></button>
+  <button class="btn btn-light emojis" id="submitIcon" type="submit"><i class="fas fa-search"></i></button>
  </div>
   <div class="col-1">
-  <button class="btn btn-outline-success" id="currentLocation" type="submit"><i class="fas fa-map-marker-alt emojis"></i></button>
+  <button class="btn btn-light emojis" id="currentLocation" type="submit"><i class="fas fa-map-marker-alt emojis"></i></button>
   </div>
 </div>
 </form>
@@ -37,11 +37,11 @@
       alt="sunny"
       id="weatherIcon"
       />
-      
+   
       <span id="temperature">°C</span></h2>
    <h3></h3>
    </div>
-   <div class="forecast-week">
+   <div class="forecast-week" id="weather-forecast">
        <div class="row">
     <div class="col-5">
       Monday
@@ -54,29 +54,29 @@
        <br/>
        Friday
     </div>
-    <div class="col-2 temperature">
-       20
-       <br/>
-       16
-       <br/>
-       12
-       <br/>
-       5
-       <br/>
-       0
+    <div class="col-2 weather-forecast-temperature-max">
+     20
+     <br/>
+     18
+     <br/>
+     16
+     <br/>
+     18
+     <br/>
+     16
     </div>
-    <div class="col-3 minimum">
-       18
-       <br/>
-       14
-       <br/>
-       9
-       <br/>
-       3
-       <br/>
-       -1
+       <div class="col-2 weather-forecast-temperature-min">
+     18
+     <br/>
+     16
+     <br/>
+     15
+     <br/>
+     19
+     <br/>
+     10
     </div>
-    <div class="col-2">
+    <div class="col-2 forecast-emojies">
       <i class="fas fa-cloud-sun"></i>
       <br />
 <i class="fas fa-cloud-sun-rain"></i>
@@ -87,8 +87,8 @@
 <br/>
 <i class="fas fa-meteor"></i>
     </div>
-    </div>
-    </div>
+   </div>
+   </div>
    </div>
     <div class="reference"><p><a href="https://github.com/SharonSmit/my-weather-app" target="blank">Open-source code</a> by Sharon Smit</p></div>
    <script src="https://kit.fontawesome.com/074cec0752.js" crossorigin="anonymous"></script>

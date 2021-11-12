@@ -62,16 +62,16 @@ color: #5b6369;
 font-size: 18px;
 }
 .emojis {
-    font-size: 20px;
+color: #5b6369;
 }
-.temperature {
+.forecast-emojies {
     text-align: right;
-}
-.minimum {
-    color: darkgray;
 }
 .reference {
     font-size: small;
     font-family: monospace;
     text-align: center;
 }
+.weather-forecast-temperature-min {
+    opacity: 0.5;
+    text-align: left;}
