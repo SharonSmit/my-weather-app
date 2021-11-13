@@ -31,18 +31,16 @@ a {
 }
 .container {
     max-width: 850px;
-    margin: 20px auto;
+    margin: 10px auto;
     padding: 0;
-    min-width: 360px;
 }
 .card-css {
     border: none;
-    border-radius: 20px;
+    border-radius: 15px;
     background: radial-gradient(circle at 50% 5%,  rgb(255, 167, 38) 50%,  rgb(255, 255, 255) 50%, rgb(255, 255, 255) 66%);
     text-align: center;
     font-family: 'Open Sans', sans-serif;
-    max-width: 500px;
-    margin: 50px auto;
+    margin: 30px auto;
     padding: 20px;
     box-shadow: 3px 10px 12px rgba(0, 0, 0, 0.1);
 }
@@ -54,24 +52,21 @@ a {
     font-size: 20px;
 }
 .forecast-week {
-margin: 40px 10px 20px 20px;
-text-align: left;
-line-height: 2.5;
+margin: 40px 10px 20px 0px;
+text-align: center;
+line-height: 1.5;
 background-color: #fff;
 color: #5b6369;
-font-size: 18px;
+font-size: 16px;
 }
 .emojis {
 color: #5b6369;
-}
-.forecast-emojies {
-    text-align: right;
 }
 .reference {
     font-size: small;
     font-family: monospace;
     text-align: center;
 }
-.weather-forecast-temperature-min {
+.weather-forcast-min {
     opacity: 0.5;
-    text-align: left;}
+}
