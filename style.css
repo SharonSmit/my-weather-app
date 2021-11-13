@@ -22,7 +22,7 @@ h3:first-letter {
 text-transform: capitalize;
 }
 h4 {
-    margin-top: 20px;
+    margin-top: 40px;
     font-weight: 100;
     font-size: inherit;
 }
@@ -41,8 +41,6 @@ a {
     font-family: 'Open Sans', sans-serif;
     margin: 40px auto;
     padding: 20px;
-        padding-right: 15px;
-    padding-left: 15px;
     box-shadow: 3px 10px 12px rgba(0, 0, 0, 0.1);
 }
 .input-group {
