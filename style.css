@@ -22,7 +22,7 @@ h3:first-letter {
 text-transform: capitalize;
 }
 h4 {
-    margin-top: 40px;
+    margin-top: 20px;
     font-weight: 100;
     font-size: inherit;
 }
@@ -39,7 +39,7 @@ a {
     background: fff;
     text-align: center;
     font-family: 'Open Sans', sans-serif;
-    margin: 60px auto;
+    margin: 40px auto;
     padding: 20px;
         padding-right: 15px;
     padding-left: 15px;
