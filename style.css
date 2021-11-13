@@ -30,8 +30,8 @@ a {
     color: #9060c4;
 }
 .container {
-    width: 100%;
-    margin: auto;
+    padding: 20px;
+    margin: 20px auto;
 }
 .card-css {
     border: none;
