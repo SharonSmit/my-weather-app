@@ -40,29 +40,32 @@ a {
     background: radial-gradient(circle at 50% 5%,  rgb(255, 167, 38) 50%,  rgb(255, 255, 255) 50%, rgb(255, 255, 255) 66%);
     text-align: center;
     font-family: 'Open Sans', sans-serif;
-    margin: 30px auto;
+    margin: 80px auto;
     padding: 20px;
     box-shadow: 3px 10px 12px rgba(0, 0, 0, 0.1);
 }
 .input-group {
     display: block;
     margin: 25px 0px auto;
-    padding-bottom:30px;
+    padding-bottom: 20px;
     border-radius: 25px;
     font-size: 20px;
 }
 .forecast-week {
-margin: 40px 10px 20px 0px;
+margin: 5px 5px 5px 5px;
+padding: 20px;
 text-align: center;
 line-height: 1.5;
 background-color: #fff;
+border-radius: 5px;
 color: #5b6369;
-font-size: 16px;
+font-size: 15px;
 }
 .emojis {
 color: #5b6369;
 }
 .reference {
+    margin-top: -40px;
     font-size: small;
     font-family: monospace;
     text-align: center;

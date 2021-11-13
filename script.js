@@ -18,6 +18,7 @@ h4.innerHTML = (`${day} ${hours}:${minutes}`);
 
 displayTime();
 
+
 function handlePosition(position) {
   let latitude = position.coords.latitude;
   let longitude = position.coords.longitude;
@@ -35,16 +36,18 @@ function getCurrentLocation(event) {
 let currentLocation = document.querySelector("#currentLocation");
 currentLocation.addEventListener("click", getCurrentLocation);
 
-
 function showWeather(response) {
   document.querySelector("h1").innerHTML = response.data.name;
-  document.querySelector("#temperature").innerHTML = Math.round(response.data.main.temp) + "°c";
+  document.querySelector("#temperature").innerHTML = Math.round(response.data.main.temp) + "°C";
   document.querySelector("h3").innerHTML = response.data.weather[0].description;
   document.querySelector("#weatherIcon").setAttribute(   
     "src",
     `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`);
 document.querySelector("#weatherIcon").setAttribute("alt", response.data.weather[0].description);
-  }
+ 
+getForecast(response.data.coord);
+changeBackground(response.data.main.temp);
+}
 
 function searchCity(city) {
   let apiKey = "9cb72bec958f8fb02391985ed7b219d2";
@@ -59,23 +62,84 @@ function handleSubmit (event) {
   searchCity(city);
 }
 
-let updateCity = document.querySelector("form");
-updateCity.addEventListener("submit", searchCity);
-
 let searchForm = document.querySelector("form");
 searchForm.addEventListener("submit", handleSubmit);
 
 searchCity("Amsterdam");
 
-function changeBackground(color) {
-  let changeTemperature = Math.round(response.data.main.temp);
-  if (changeTemperature <=15) {
-  document.getElementById("cardStyle").style.background = 'radial-gradient(circle at 50% 5%,  rgb(197, 255, 38) 50%,  rgb(255, 255, 255) 50%, rgb(255, 255, 255) 66%)';
-  }
-else {
-  document.getElementById("cardStyle").style.background = 'radial-gradient(circle at 50% 5%,  rgb(300, 200, 38) 50%,  rgb(255, 255, 255) 50%, rgb(255, 255, 255) 66%)';
+function formatDay(timestamp){
+let date = new Date(timestamp * 1000);
+let day = date.getDay();
+let days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+return days[day];
 }
-}
-searchForm.addEventListener("submit", changeBackground);
 
-                       
+function displayForecast(response) {
+  let forecast = response.data.daily;
+  let forecastElement = document.querySelector("#weather-forecast");
+  let forecastHTML = `<div class="row">`;
+  forecast.forEach(function(forecastDay, index){
+    if (index < 4)
+forecastHTML = 
+    forecastHTML + 
+    `
+                  <div class="col-3">
+                        <div class="weather-forecast-date">
+                           ${formatDay(forecastDay.dt)}
+                        </div>
+                              <img src="http://openweathermap.org/img/wn/${forecastDay.weather[0].icon}@2x.png" alt="" width="40px">
+                           <div class="weather-forecast-temp">${Math.round(forecastDay.temp.max)}° 
+                                 <span class="weather-forcast-min">${Math.round(forecastDay.temp.min)}°</span>
+                           </div>
+                        </div>
+  `;
+  })
+  
+forecastHTML = forecastHTML + `</div>`; 
+forecastElement.innerHTML = forecastHTML;
+}
+
+function getForecast(coord){
+  let apiKey = "9cb72bec958f8fb02391985ed7b219d2";
+  let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${coord.lat}&lon=${coord.lon}&appid=${apiKey}&units=metric`;
+  axios.get(apiUrl).then(displayForecast);
+}
+console.log(getForecast);
+
+
+function changeBackground(temperature) {
+  if (temperature > 50) {
+    document.querySelector("#cardStyle").style.background =
+      "radial-gradient(circle at 50% 5%,  rgb(178, 39, 41) 50%,  rgb(178, 39, 41) 50%, rgb(178, 39, 41) 66%)";
+  } else {
+  if (temperature > 40 && temperature < 50){
+    document.querySelector("#cardStyle").style.background =
+      "radial-gradient(circle at 50% 5%,  rgb(226, 87, 35) 50%,  rgb(226, 87, 35) 50%, rgb(226, 87, 35) 66%)";
+  } else {
+  if (temperature > 30 && temperature < 40){
+    document.querySelector("#cardStyle").style.background =
+      "radial-gradient(circle at 50% 5%,  rgb(232, 134, 31) 50%,  rgb(232, 134, 31) 50%, rgb(232, 134, 31) 66%)";
+  } else {
+  if (temperature > 20 && temperature < 30){
+    document.querySelector("#cardStyle").style.background =
+      "radial-gradient(circle at 50% 5%,  rgb(242, 184, 0) 50%,  rgb(242, 184, 0) 50%, rgb(242, 184, 0) 66%)";
+  } else {
+  if (temperature > 10 && temperature < 20){
+    document.querySelector("#cardStyle").style.background =
+      "radial-gradient(circle at 50% 5%,  rgb(97, 187, 194) 50%,  rgb(97, 187, 194) 50%, rgb(97, 187, 194) 66%)";
+  } else {
+  if (temperature > 0 && temperature < 10){
+    document.querySelector("#cardStyle").style.background =
+      "radial-gradient(circle at 50% 5%,  rgb(1, 109, 177) 50%,  rgb(1, 109, 177) 50%, rgb(1, 109, 177) 66%)";
+    } else {
+  if (temperature < 0){
+    document.querySelector("#cardStyle").style.background =
+      "radial-gradient(circle at 50% 5%,  rgb(44, 48, 136) 50%,  rgb(44, 48, 136) 50%, rgb(44, 48, 136) 66%)";
+    }
+  }
+  }
+    }
+  }
+    }
+  }
+  }
