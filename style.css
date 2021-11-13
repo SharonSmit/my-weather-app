@@ -30,7 +30,7 @@ a {
     color: #9060c4;
 }
 .container {
-    max-width: 480px;
+    width: 100%;
     padding: 0;
 }
 .card-css {
