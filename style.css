@@ -31,13 +31,12 @@ a {
 }
 .container {
     max-width: 850px;
-    margin: 10px auto;
     padding: 0;
 }
 .card-css {
     border: none;
     border-radius: 15px;
-    background: radial-gradient(circle at 50% 5%,  rgb(255, 167, 38) 50%,  rgb(255, 255, 255) 50%, rgb(255, 255, 255) 66%);
+    background: fff;
     text-align: center;
     font-family: 'Open Sans', sans-serif;
     margin: 80px auto;
