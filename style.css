@@ -30,14 +30,12 @@ a {
     color: #9060c4;
 }
 .container {
-    max-width: 100%;
     padding-right: var(--bs-gutter-x,.75rem);
     padding-left: var(--bs-gutter-x,.75rem);
     margin-right: auto;
     margin-left: auto;
 }
 .card-css {
-    max-width: 480px;
     border: none;
     border-radius: 15px;
     background: fff;
