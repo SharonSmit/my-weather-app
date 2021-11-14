@@ -33,7 +33,6 @@ a {
 }
 .container {
     display: block;
-    max-width: 500px;
     margin: 30px auto;
     padding: 40px;
 }
