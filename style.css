@@ -1,5 +1,7 @@
 body {
 background-color: #f3f2ee;
+display: block;
+margin: 8px;
 }
 
 h1, h2, h3, h4 {
